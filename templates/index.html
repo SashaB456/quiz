@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content%}
+    <form method="post">
+    <select name="quiz">
+        {% for q in questions %}
+        <option value="{{ q[0] }}">
+            {{ q[1] }}
+        </option>
+        {% endfor %}
+    </select>
+    <input type="submit">
+</form>
+{% endblock %}
+</body>
+</html>
